@@ -1,0 +1,20 @@
+# Opening artwork
+
+Created using the built-in image-generation tool for this project on 2026-09-26. These images are original generated artwork, not assets from AdVenture Capitalist or Clicker Heroes. Exact pixel consistency remains subject to later art polish.
+
+- `estate.png`: generated portrait room scene, 1024×1536. Used as a responsive decorative scene.
+- `businesses.png`: generated 1536×1024 six-tile sheet. CSS displays three business vignettes and three manager portraits as equal square regions. No text or controls are baked into gameplay art.
+
+## Estate prompt
+
+Create one original game background asset, portrait 2:3 composition, no UI, no frames, no text, no letters. Crisp carefully hand-placed-looking 16-bit pixel art with clear pixel clusters and limited palette, NOT smooth painting. Shabby gothic vampire home at night. Young tired pale vampire with black messy hair and a burgundy cape over white work shirt sits at a small wooden desk bottom-middle, holding a warm coffee mug, checking a ledger. Tall closed wooden coffin rests on cardboard moving boxes on left. Old washing machine on right with laundry, small black cat asleep on it. Moonlit arched window upper right, old bookshelves, peeling plum wallpaper, exposed brick, ceiling leak and bucket, amber desk candle. Colours deep midnight navy, warm burgundy, muted plum, amber highlights, moonlight blue. Charming dry comedy and cosy melancholy, no gore. Foreground desk prominent, coherent room perspective. Reserve quiet dark wall upper quarter for UI text overlay by app. Detailed but readable at 320px width. This will be the actual estate scene in a browser idle game; no baked-in interface, signage or typography.
+
+## Sprite sheet prompt
+
+Generate a precise game asset sheet: landscape canvas exactly 3:2 aspect, arranged as exactly THREE equal columns and TWO equal rows, SIX square tiles, edge-to-edge with NO gaps, NO borders, no letters, no text, no UI. All tiles have same solid midnight-navy background #111522. Crisp detailed 16-bit pixel art with large clearly defined pixel clusters, limited colours, warm amber and burgundy accents. Top row (left to right): 1 cheerful skeleton courier wearing a red cap sitting on a small red delivery scooter in three-quarter profile, whole scooter visible, 2 skeleton groundskeeper in straw hat beside wheelbarrow and grave with little flowers, 3 magical little blood-orange tree with red-orange fruit and purple soil in wooden planter. Bottom row portraits close cropped shoulders-up, same visual style: 1 cheerful skeleton courier Doug in red cap and dark vest, 2 skeleton gardener Clive in straw hat and green overalls, 3 older human witch Auntie Hemlock with wrinkled kind but mischievous face, floppy plum hat, gardening clothes and a little leaf in her hat. Every subject centered inside its own exact equal square tile with 10 percent padding, no element may cross a tile boundary. Art for an original funny vampire capitalism idle game. No gradients, no photorealism, no smooth cartoon shading, no gore.
+
+## Rendered business vignettes (businesses 4-14)
+
+`business-lettings.png`, `business-club.png`, `business-logistics.png`, `business-castle.png`, `business-minions.png`, `business-everafter.png`, `business-cryptic.png`, `business-circle.png`, `business-pip.png`, `business-sovereign.png` and `business-eclipse.png` were rendered in-house on 2026-09-27 from procedural 3D models by the dev tool in `tools/hero` (not part of the game build). Each scene is built from the map's own low-poly kit (`src/map/kit.ts`) and rendered at 128×128 with a 3-band toon ramp, a 1 px ink silhouette outline, posterised light halos and quantisation to the game palette, then upscaled 4× with nearest-neighbour to 512×512. No image generator, external asset or traced artwork was used, and no text is baked in. The game shows them with `image-rendering: pixelated`.
+
+To re-render: `npx vite --host 127.0.0.1 --port 5195 --strictPort`, then `node tools/hero/capture.mjs <outDir>` and copy `business-<id>.png` here. Manager portraits for these businesses are still pending.
